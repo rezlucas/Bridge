@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="14" fill="#121212"/>
+<g fill="#e6ff3a">
+<circle cx="55.0" cy="32.0" r="3.4"/>
+<circle cx="51.9" cy="43.5" r="3.4"/>
+<circle cx="43.5" cy="51.9" r="3.4"/>
+<circle cx="32.0" cy="55.0" r="3.4"/>
+<circle cx="20.5" cy="51.9" r="3.4"/>
+<circle cx="12.1" cy="43.5" r="3.4"/>
+<circle cx="9.0" cy="32.0" r="3.4"/>
+<circle cx="12.1" cy="20.5" r="3.4"/>
+<circle cx="20.5" cy="12.1" r="3.4"/>
+<circle cx="32.0" cy="9.0" r="3.4"/>
+<circle cx="43.5" cy="12.1" r="3.4"/>
+<circle cx="51.9" cy="20.5" r="3.4"/>
+</g>
+<text x="32" y="32" text-anchor="middle" dominant-baseline="central" font-family="Arial Black,Archivo,Helvetica,sans-serif" font-weight="900" font-size="25" fill="#f1ede3">B</text>
+</svg>
