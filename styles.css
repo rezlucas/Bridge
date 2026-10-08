@@ -285,3 +285,7 @@ body.ponte{--roxo:var(--ponte-roxo);--amarelo:var(--ponte-ouro)}
 .speaker-card:hover .speaker-card__in,.speaker-card:focus-visible .speaker-card__in{background:#0a66c2;border-color:#0a66c2}
 .speaker-card:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
 @media (max-width:560px){.speaker-card__in{top:10px;left:10px;width:24px;height:24px;font-size:12px;border-radius:6px}}
+/* Palavras-chave do hero */
+.lead strong.marker{color:var(--tinta);font-weight:700}
+.keywords{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;font-size:clamp(20px,2vw,26px);line-height:1.1;font-weight:800;letter-spacing:-.02em;text-transform:uppercase}
+.keywords span{background:linear-gradient(transparent 55%,var(--amarelo) 55%);padding:0 .06em}
