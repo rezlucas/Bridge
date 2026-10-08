@@ -328,7 +328,7 @@ body.cta-on footer{padding-bottom:120px}
 @media (prefers-reduced-motion:reduce){.sticky-cta,.wa-float{transition:none}.sticky-cta__btn{animation:none}}
 
 /* Slide "Nove gerações. O Ponte faz em uma." */
-.slide{background:var(--amarelo);border-block:2px solid var(--tinta)}
+.slide{background:var(--osso)}
 .slide__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start}
 .slide__vs{display:grid;gap:28px}
 .slide__big{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
@@ -344,3 +344,6 @@ body.cta-on footer{padding-bottom:120px}
 @media (max-width:820px){.slide__grid{grid-template-columns:1fr}}
 @media (max-width:560px){.slide__big{gap:14px}.slide__big strong{font-size:110px}.slide__table div{grid-template-columns:1fr;gap:6px}}
 .opt{text-transform:none;letter-spacing:0;color:var(--tinta-2)}
+.ponte-video{background:var(--ponte-roxo)}
+.ponte-video p{color:var(--osso) !important}
+.ponte-video .quote p{color:var(--tinta) !important}
