@@ -232,14 +232,6 @@ a.ext:hover{background-size:100% 100%}
 @media (max-width:700px){.lineup-grid,.partner-stats{grid-template-columns:1fr}.bigdate{padding:16px 20px;gap:14px}.partner-band .btn{width:100%}}
 
 /* Chamada para o Instituto Ponte (página do BRIDGE) */
-.ponte-teaser{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
-.teaser-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:2px dotted var(--linha);padding-top:20px}
-.teaser-stats div{display:grid;gap:4px}
-.teaser-stats strong{font-size:clamp(32px,4vw,48px);line-height:1;font-weight:800;letter-spacing:-.03em}
-.teaser-stats span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-2)}
-.teaser-photo{display:block;aspect-ratio:4/5}
-.teaser-photo img{transition:transform .5s ease}
-.teaser-photo:hover img{transform:scale(1.03)}
 
 /* Página do Instituto Ponte: roxo da marca do Ponte + amarelo das camisetas */
 body.ponte{--roxo:#5b47d6;--roxo-2:#4a37c2;--amarelo:#ffd23f}
@@ -259,15 +251,27 @@ body.ponte{--roxo:#5b47d6;--roxo-2:#4a37c2;--amarelo:#ffd23f}
 .ponte-stats span{color:var(--tinta-2)}
 .ponte .dark .quote{background:var(--amarelo)}
 .ponte-bridge{background:var(--osso);border-top:2px dotted var(--linha)}
-.ponte-bridge .bigdate{background:var(--tinta);color:var(--osso)}
-.ponte-bridge .bigdate span{border-left-color:var(--osso)}
+
 @media (max-width:820px){
-  .ponte-teaser,.ponte-hero__grid{grid-template-columns:1fr}
-  .teaser-photo{aspect-ratio:4/3}
+  .ponte-hero__grid,.ponte-cta__grid{grid-template-columns:1fr}
   .ponte nav{background:var(--roxo)}
   .ponte nav a{border-bottom-color:rgba(241,237,227,.25)}
 }
-@media (max-width:560px){.teaser-stats{gap:10px}.teaser-stats span{font-size:10px}.ponte-hero__photo{box-shadow:0 0 0 6px rgba(255,210,63,.9)}}
+@media (max-width:560px){.ponte-hero__photo{box-shadow:0 0 0 6px rgba(255,210,63,.9)}}
 .dark .quote{color:var(--tinta)}
 .btn span[aria-hidden="true"]{margin-left:8px}
 .ponte-stats strong{font-size:clamp(36px,4.2vw,52px)}
+
+/* Chamada "Conheça o Instituto Ponte" (página do BRIDGE), na identidade do Ponte */
+.ponte-cta{background:#5b47d6;color:var(--osso)}
+.ponte-cta .lead{color:#e8e4ff}
+.ponte-cta a:focus-visible{outline-color:var(--amarelo)}
+.ponte-cta .btn--yellow{background:#ffd23f}
+.ponte-cta__grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px;align-items:center}
+.ponte-cta__links{display:grid;border-top:2px dotted rgba(241,237,227,.35)}
+.ponte-cta__links a{display:flex;align-items:baseline;gap:16px;min-height:64px;padding-block:18px;border-bottom:2px dotted rgba(241,237,227,.35);text-decoration:none;font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-.01em;transition:padding .2s ease,color .2s ease}
+.ponte-cta__links a::after{content:"→";margin-left:auto;font-weight:400}
+.ponte-cta__links a:hover{color:#ffd23f;padding-left:8px}
+.ponte-cta__links .mono{color:#ffd23f}
+/* Fim da página do Ponte: só o link para o BRIDGE */
+.ponte-bridge__row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
