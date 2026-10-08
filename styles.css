@@ -347,3 +347,4 @@ body.cta-on footer{padding-bottom:120px}
 .ponte-video{background:var(--ponte-roxo)}
 .ponte-video p{color:var(--osso) !important}
 .ponte-video .quote p{color:var(--tinta) !important}
+.price-total{font-size:12px;white-space:nowrap}
