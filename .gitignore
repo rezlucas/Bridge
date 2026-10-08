@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Fotos originais enviadas para o lineup (a página usa as versões recortadas em assets/lineup/*.jpg)
+assets/lineup/*/
