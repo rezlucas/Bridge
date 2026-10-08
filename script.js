@@ -57,4 +57,17 @@
       Promise.race([envio,new Promise(function(r){setTimeout(r,2500);})]).then(seguir);
     });
   }
+
+  // Barra fixa "Garantir minha vaga": aparece depois da capa e some na inscrição
+  var bar=document.getElementById('sticky-cta'), hero=document.getElementById('topo'), insc=document.getElementById('inscricao');
+  if(bar&&hero&&insc&&'IntersectionObserver' in window){
+    var heroVisivel=true, inscVisivel=false, barBtn=bar.querySelector('a');
+    var atualizar=function(){
+      var on=!heroVisivel&&!inscVisivel;
+      bar.classList.toggle('on',on);document.body.classList.toggle('cta-on',on);
+      bar.setAttribute('aria-hidden',on?'false':'true');barBtn.tabIndex=on?0:-1;
+    };
+    new IntersectionObserver(function(es){heroVisivel=es[0].isIntersecting;atualizar();}).observe(hero);
+    new IntersectionObserver(function(es){inscVisivel=es[0].isIntersecting;atualizar();},{threshold:.15}).observe(insc);
+  }
 })();
