@@ -237,10 +237,6 @@ body.ponte{--roxo:var(--ponte-roxo);--amarelo:var(--ponte-ouro)}
 .ponte-hero__photo{margin:0;aspect-ratio:4/3;box-shadow:0 0 0 10px rgba(238,183,70,.9)}
 .btn--light{background:transparent;color:var(--osso);border:2px solid var(--osso)}
 .btn--light:hover{background:rgba(241,237,227,.12)}
-.ponte-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.ponte-stats div{background:var(--branco);border-radius:var(--r-card);padding:28px 24px;display:grid;gap:10px;align-content:start;border-top:6px solid var(--roxo)}
-.ponte-stats strong{font-size:clamp(40px,5vw,60px);line-height:1;font-weight:800;letter-spacing:-.03em;color:var(--roxo)}
-.ponte-stats span{color:var(--tinta-2)}
 .ponte .dark .quote{background:var(--amarelo)}
 .ponte-bridge{background:var(--osso);border-top:2px dotted var(--linha)}
 
@@ -250,7 +246,6 @@ body.ponte{--roxo:var(--ponte-roxo);--amarelo:var(--ponte-ouro)}
 @media (max-width:560px){.ponte-hero__photo{box-shadow:0 0 0 6px rgba(238,183,70,.9)}}
 .dark .quote{color:var(--tinta)}
 .btn span[aria-hidden="true"]{margin-left:8px}
-.ponte-stats strong{font-size:clamp(36px,4.2vw,52px)}
 
 /* Fim da página do Ponte: só o link para o BRIDGE */
 .ponte-bridge__row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -331,3 +326,20 @@ body.cta-on footer{padding-bottom:120px}
   body.cta-on .wa-float{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 }
 @media (prefers-reduced-motion:reduce){.sticky-cta,.wa-float{transition:none}.sticky-cta__btn{animation:none}}
+
+/* Slide "Nove gerações. O Ponte faz em uma." */
+.slide{background:var(--amarelo);border-block:2px solid var(--tinta)}
+.slide__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.slide__vs{display:grid;gap:28px}
+.slide__big{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.slide__big strong{font-size:clamp(120px,15vw,200px);line-height:.8;font-weight:800;letter-spacing:-.06em;min-width:.62em;text-align:center}
+.slide__big p{font-size:clamp(15px,1.4vw,18px);line-height:1.4;max-width:28ch}
+.slide__big + .slide__big{border-top:2px dotted var(--tinta);padding-top:28px}
+.slide__table{display:grid;border-top:2px solid var(--tinta)}
+.slide__caption{padding:10px 0;border-bottom:2px solid var(--tinta)}
+.slide__table div{display:grid;grid-template-columns:minmax(110px,.42fr) 1fr;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(18,18,18,.35)}
+.slide__table strong{font-size:clamp(28px,3vw,40px);line-height:1;font-weight:800;letter-spacing:-.03em}
+.slide__table span{font-size:15px;line-height:1.4}
+.slide__src{color:var(--tinta-2);border-top:2px solid var(--tinta);padding-top:14px}
+@media (max-width:820px){.slide__grid{grid-template-columns:1fr}}
+@media (max-width:560px){.slide__big{gap:14px}.slide__big strong{font-size:110px}.slide__table div{grid-template-columns:1fr;gap:6px}}
