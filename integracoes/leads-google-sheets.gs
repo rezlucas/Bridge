@@ -12,8 +12,8 @@
  * Os leads entram na aba "Leads" (criada automaticamente, com cabeçalho).
  */
 const ABA = 'Leads';
-const COLUNAS = ['Data/hora', 'Nome', 'E-mail', 'WhatsApp', 'Empresa', 'Cargo', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'Página'];
-const CAMPOS = ['nome', 'email', 'telefone', 'empresa', 'cargo', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'pagina'];
+const COLUNAS = ['Data/hora', 'Nome', 'Empresa', 'Cargo', 'Setor', 'E-mail', 'WhatsApp', 'Perfil', 'Perfil (outro)', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'Página'];
+const CAMPOS = ['nome', 'empresa', 'cargo', 'setor', 'email', 'telefone', 'perfil', 'perfil_outro', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'pagina'];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();

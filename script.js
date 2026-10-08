@@ -28,7 +28,10 @@
   var form=document.getElementById('lead-form');
   if(form){
     var erro=document.getElementById('lead-erro'), btn=document.getElementById('lead-submit'), btnHtml=btn.innerHTML;
-    var campos=['nome','email','telefone','empresa','cargo'];
+    var obrigatorios=['nome','empresa','cargo','email','telefone'];
+    var enviados=['nome','empresa','cargo','setor','email','telefone','perfil','perfil_outro'];
+    var perfil=form.elements.perfil, outroCampo=document.getElementById('lead-perfil-outro-campo'), outro=form.elements.perfil_outro;
+    perfil.addEventListener('change',function(){var on=perfil.value==='Outro';outroCampo.hidden=!on;outro.required=on;if(on){outro.focus();}else{outro.value='';outro.setAttribute('aria-invalid','false');}});
     var val=function(n){return (form.elements[n].value||'').trim();};
     var valido=function(n,v){
       if(!v) return false;
@@ -41,6 +44,7 @@
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var primeiro=null;
+      var campos=obrigatorios.concat(perfil.value==='Outro'?['perfil_outro']:[]);
       campos.forEach(function(n){var ok=valido(n,val(n));form.elements[n].setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!primeiro)primeiro=form.elements[n];});
       if(primeiro){erro.hidden=false;primeiro.focus();return;}
       erro.hidden=true;btn.disabled=true;btn.textContent='Indo para o pagamento…';
@@ -48,7 +52,7 @@
       var seguir=function(){window.location.href=checkout;};
       if(!endpoint){seguir();return;}
       var dados=new URLSearchParams();
-      campos.forEach(function(n){dados.append(n,val(n));});
+      enviados.forEach(function(n){dados.append(n,val(n));});
       var q=new URLSearchParams(window.location.search);
       ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))dados.append(k,q.get(k));});
       dados.append('pagina',window.location.href.split('#')[0]);

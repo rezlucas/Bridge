@@ -259,11 +259,14 @@
       </div>
       <!-- data-leads-endpoint: URL do App da Web do Google Apps Script (ver integracoes/leads-google-sheets.gs). Vazio = segue direto para o pagamento. -->
       <form class="lead-form" id="lead-form" novalidate data-checkout="https://cielolink.com.br/4sdL2bD" data-leads-endpoint="">
-        <div class="field field--full"><label for="lead-nome">Nome completo</label><input id="lead-nome" name="nome" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="lead-email">E-mail</label><input id="lead-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
-        <div class="field"><label for="lead-telefone">WhatsApp</label><input id="lead-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(27) 99999-9999" required></div>
+        <div class="field"><label for="lead-nome">Nome completo</label><input id="lead-nome" name="nome" type="text" autocomplete="name" required></div>
         <div class="field"><label for="lead-empresa">Empresa</label><input id="lead-empresa" name="empresa" type="text" autocomplete="organization" required></div>
         <div class="field"><label for="lead-cargo">Cargo</label><input id="lead-cargo" name="cargo" type="text" autocomplete="organization-title" required></div>
+        <div class="field"><label for="lead-setor">Setor <span class="opt">(opcional)</span></label><input id="lead-setor" name="setor" type="text"></div>
+        <div class="field"><label for="lead-email">E-mail</label><input id="lead-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="field"><label for="lead-telefone">Telefone (WhatsApp)</label><input id="lead-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(27) 99999-9999" required></div>
+        <div class="field field--full"><label for="lead-perfil">Perfil</label><select id="lead-perfil" name="perfil"><option>Empresário(a) ou sócio(a)</option><option>C-level de média ou grande empresa</option><option>Gestor(a) em sucessão familiar</option><option>Outro</option></select></div>
+        <div class="field field--full" id="lead-perfil-outro-campo" hidden><label for="lead-perfil-outro">Qual é o seu perfil?</label><input id="lead-perfil-outro" name="perfil_outro" type="text" placeholder="Ex.: conselheiro(a), investidor(a), diretor(a) de área"></div>
         <p class="form-error field--full" id="lead-erro" role="alert" hidden>Preencha os campos destacados para continuar.</p>
         <div class="ticket-actions field--full">
           <button class="btn" type="submit" id="lead-submit">Garantir minha vaga <span aria-hidden="true">→</span></button>
