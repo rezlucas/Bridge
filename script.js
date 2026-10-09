@@ -24,7 +24,7 @@
     });
   }
 
-  // Inscrição: registra o lead na planilha e segue para o pagamento
+  // Inscrição: registra o lead na planilha e abre o WhatsApp da equipe para confirmar a vaga
   var form=document.getElementById('lead-form');
   if(form){
     var erro=document.getElementById('lead-erro'), btn=document.getElementById('lead-submit'), btnHtml=btn.innerHTML;
@@ -47,16 +47,20 @@
       var campos=obrigatorios.concat(perfil.value==='Outro'?['perfil_outro']:[]);
       campos.forEach(function(n){var ok=valido(n,val(n));form.elements[n].setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!primeiro)primeiro=form.elements[n];});
       if(primeiro){erro.hidden=false;primeiro.focus();return;}
-      erro.hidden=true;btn.disabled=true;btn.textContent='Indo para o pagamento…';
-      var checkout=form.getAttribute('data-checkout'), endpoint=form.getAttribute('data-leads-endpoint');
-      var seguir=function(){window.location.href=checkout;};
+      erro.hidden=true;btn.disabled=true;btn.textContent='Abrindo o WhatsApp…';
+      var endpoint=form.getAttribute('data-leads-endpoint'), fone=form.getAttribute('data-whatsapp');
+      var perfilTxt=perfil.value==='Outro'?'Outro: '+val('perfil_outro'):perfil.value;
+      var msg='Olá, Michele. Acabei de preencher o formulário do BRIDGE (24 e 25 nov 2026) e gostaria de reservar minha vaga na lista de seleção.\n\n'+
+        'Nome: '+val('nome')+'\nEmpresa: '+val('empresa')+'\nCargo: '+val('cargo')+(val('setor')?'\nSetor: '+val('setor'):'')+
+        '\nE-mail: '+val('email')+'\nTelefone: '+val('telefone')+'\nPerfil: '+perfilTxt;
+      var seguir=function(){window.location.href='https://wa.me/'+fone+'?text='+encodeURIComponent(msg);};
       if(!endpoint){seguir();return;}
       var dados=new URLSearchParams();
       enviados.forEach(function(n){dados.append(n,val(n));});
       var q=new URLSearchParams(window.location.search);
       ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))dados.append(k,q.get(k));});
       dados.append('pagina',window.location.href.split('#')[0]);
-      // O pagamento nunca fica esperando a planilha: no máximo 2,5 s
+      // O WhatsApp nunca fica esperando a planilha: no máximo 2,5 s
       var envio=fetch(endpoint,{method:'POST',mode:'no-cors',keepalive:true,body:dados}).catch(function(){});
       Promise.race([envio,new Promise(function(r){setTimeout(r,2500);})]).then(seguir);
     });

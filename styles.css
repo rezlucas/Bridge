@@ -379,3 +379,10 @@ body.cta-on footer{padding-bottom:120px}
 @media (max-width:560px){.causa__band{grid-template-columns:1fr 1fr;gap:24px 18px}.causa__band div:first-child{grid-column:1/-1}.causa__ctas .btn{width:100%}.causa__quote{grid-template-columns:1fr}.causa__qmark{grid-row:auto;font-size:72px;line-height:.6}}
 .causa__band strong .hl{font-size:inherit;line-height:inherit;color:var(--amarelo)}
 a.ext[href^="instituto-ponte"]::after{content:none}
+/* Data menor no bloco da inscrição */
+#inscricao .bigdate{padding:12px 20px;gap:14px}
+#inscricao .bigdate strong{font-size:clamp(32px,3.6vw,44px)}
+#inscricao .bigdate span{font-size:12px}
+.slide__row--list strong{font-size:clamp(17px,1.6vw,21px);line-height:1.25;letter-spacing:-.01em}
+.slide__table span b{font-weight:700;color:var(--tinta)}
+.slide__awards{display:flex;flex-wrap:wrap;gap:6px 24px;margin:0;font-size:15px}
