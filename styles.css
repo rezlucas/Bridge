@@ -280,14 +280,6 @@ body.ponte{--roxo:var(--ponte-roxo);--amarelo:var(--ponte-ouro)}
 .causa__card p{font-size:clamp(22px,2.4vw,30px);line-height:1.15;font-weight:800;letter-spacing:-.02em}
 .causa__card--dark{background:var(--tinta);color:var(--osso)}
 .causa__card--dark .mono{color:var(--amarelo)}
-.causa__impact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;border-top:2px dotted var(--linha);padding-top:32px}
-.causa__impact .lead{color:var(--tinta)}
-.causa__nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.causa__nums div{display:grid;gap:8px;align-content:start}
-.causa__nums strong{font-size:clamp(64px,9vw,120px);line-height:.85;font-weight:800;letter-spacing:-.05em}
-.causa__nums span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-2);max-width:22ch}
-.causa__cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.causa__cta img{height:64px;width:auto}
 .btn--xl{min-height:64px;padding:0 36px;font-size:15px;gap:10px}
 /* Formulário de leads da inscrição */
 .lead-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;border-top:2px dotted var(--linha);padding-top:20px}
@@ -297,8 +289,8 @@ body.ponte{--roxo:var(--ponte-roxo);--amarelo:var(--ponte-ouro)}
 .form-error{margin:0;border-radius:var(--r-pill);background:#fff6f2;border:2px dashed var(--tinta);padding:10px 20px;font-size:14px}
 .includes--plain{border-top-color:rgba(18,18,18,.35)}
 .includes--plain li::before{background:var(--tinta);border-color:var(--tinta)}
-@media (max-width:820px){.causa__pair,.causa__impact{grid-template-columns:1fr}.causa__impact{gap:28px}}
-@media (max-width:560px){.lead-form{grid-template-columns:1fr}.causa__cta .btn{width:100%}.causa__cta img{height:52px}}
+
+@media (max-width:560px){.lead-form{grid-template-columns:1fr}}
 @media (max-width:560px){.btn--xl{font-size:12px;letter-spacing:.08em;padding:0 20px}}
 
 /* Barra fixa "Garantir minha vaga" + WhatsApp flutuante */
@@ -348,3 +340,45 @@ body.cta-on footer{padding-bottom:120px}
 .ponte-video p{color:var(--osso) !important}
 .ponte-video .quote p{color:var(--tinta) !important}
 .price-total{font-size:12px;white-space:nowrap}
+
+/* Por que o BRIDGE (conteúdo validado) */
+.causa__intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.causa__intro .h-lg{font-size:clamp(36px,5.4vw,64px);text-transform:none;letter-spacing:-.03em}
+.causa__text{display:grid;gap:18px;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--tinta-2)}
+.causa__text p{margin:0}
+.causa__text mark{background:var(--amarelo);color:var(--tinta);padding:0 .2em;border-radius:4px;font-weight:600}
+.causa__punch{border-top:2px solid var(--tinta);padding-top:18px;color:var(--tinta);font-weight:700;font-size:clamp(19px,1.8vw,22px);line-height:1.35}
+.causa .h-md{text-transform:none;font-size:clamp(28px,3.2vw,40px);letter-spacing:-.02em}
+.causa__pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.causa__card{background:var(--amarelo);border-radius:var(--r-card);padding:clamp(24px,3.5vw,40px);display:grid;gap:14px;align-content:start}
+.causa__card p{font-size:clamp(19px,1.8vw,23px);line-height:1.35;font-weight:600;letter-spacing:-.01em}
+.causa__card--dark{background:var(--tinta);color:var(--osso)}
+.causa__card--dark .mono{color:var(--amarelo)}
+.causa__band{background:var(--tinta);color:var(--osso);border-radius:var(--r-card);padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px}
+.causa__band div{display:grid;gap:10px;align-content:start}
+.causa__band strong{font-size:clamp(38px,4.4vw,56px);line-height:1;font-weight:800;letter-spacing:-.03em;white-space:nowrap}
+.causa__band .hl{color:var(--amarelo)}
+.causa__band span{font-size:14px;line-height:1.45;color:#d9d5c9}
+.causa__band small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amarelo)}
+.causa__awards{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin:4px 0 0;font-size:15px}
+.causa__awards svg{width:20px;height:20px;flex-shrink:0;margin-right:-14px}
+.causa__quote{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 28px;align-items:start}
+.causa__qmark{grid-row:span 2;font-size:clamp(80px,10vw,140px);line-height:.8;font-weight:800;color:var(--tinta)}
+.causa__quote blockquote{margin:0}
+.causa__quote blockquote p{font-size:clamp(20px,2.4vw,30px);line-height:1.35;font-style:italic;letter-spacing:-.01em}
+.causa__quote figcaption{display:flex;align-items:center;gap:14px;margin-top:18px}
+.causa__quote figcaption span:last-child{display:grid;font-size:14px;color:var(--tinta-2)}
+.causa__quote figcaption strong{color:var(--tinta);font-size:16px}
+.causa__avatar{width:48px;height:48px;border-radius:50%;background:var(--amarelo);display:grid;place-items:center;font-weight:800;font-size:15px}
+.causa__close{display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:32px;align-items:end;border-top:2px solid var(--tinta);padding-top:clamp(28px,4vw,48px)}
+.causa__close .h-lg{text-transform:none;font-size:clamp(30px,4vw,48px)}
+.causa__close p{font-size:clamp(17px,1.5vw,19px);line-height:1.55;max-width:52ch}
+.causa__ctas{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:1000px){.causa__band{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:820px){.causa__intro,.causa__pair,.causa__close{grid-template-columns:1fr}}
+@media (max-width:560px){.causa__band{grid-template-columns:1fr 1fr;gap:24px 18px}.causa__band div:first-child{grid-column:1/-1}.causa__ctas .btn{width:100%}.causa__quote{grid-template-columns:1fr}.causa__qmark{grid-row:auto;font-size:72px;line-height:.6}}
+/* Card do lineup sem foto (iniciais) */
+.speaker-card--noimg{background:radial-gradient(120% 90% at 50% 20%,#3a3a36 0%,#1d1d1b 70%)}
+.speaker-card__mono{position:absolute;top:22%;left:50%;transform:translateX(-50%);font-size:clamp(64px,8vw,110px);font-weight:900;letter-spacing:-.04em;color:rgba(230,255,58,.85);z-index:-1}
+.causa__band strong .hl{font-size:inherit;line-height:inherit;color:var(--amarelo)}
+a.ext[href^="instituto-ponte"]::after{content:none}
