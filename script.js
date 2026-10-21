@@ -28,10 +28,12 @@
   var form=document.getElementById('lead-form');
   if(form){
     var erro=document.getElementById('lead-erro'), btn=document.getElementById('lead-submit'), btnHtml=btn.innerHTML;
-    var obrigatorios=['nome','empresa','cargo','email','telefone'];
-    var enviados=['nome','empresa','cargo','setor','email','telefone','perfil','perfil_outro'];
+    var obrigatorios=['nome','empresa','cargo','email','telefone','origem'];
+    var enviados=['nome','empresa','cargo','setor','email','telefone','perfil','perfil_outro','origem','origem_outro'];
     var perfil=form.elements.perfil, outroCampo=document.getElementById('lead-perfil-outro-campo'), outro=form.elements.perfil_outro;
     perfil.addEventListener('change',function(){var on=perfil.value==='Outro';outroCampo.hidden=!on;outro.required=on;if(on){outro.focus();}else{outro.value='';outro.setAttribute('aria-invalid','false');}});
+    var origem=form.elements.origem, origemCampo=document.getElementById('lead-origem-outro-campo'), origemOutro=form.elements.origem_outro;
+    origem.addEventListener('change',function(){var on=origem.value==='Outro';origemCampo.hidden=!on;origemOutro.required=on;origem.setAttribute('aria-invalid','false');if(on){origemOutro.focus();}else{origemOutro.value='';origemOutro.setAttribute('aria-invalid','false');}});
     var val=function(n){return (form.elements[n].value||'').trim();};
     var valido=function(n,v){
       if(!v) return false;
@@ -44,15 +46,16 @@
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var primeiro=null;
-      var campos=obrigatorios.concat(perfil.value==='Outro'?['perfil_outro']:[]);
+      var campos=obrigatorios.concat(perfil.value==='Outro'?['perfil_outro']:[]).concat(origem.value==='Outro'?['origem_outro']:[]);
       campos.forEach(function(n){var ok=valido(n,val(n));form.elements[n].setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!primeiro)primeiro=form.elements[n];});
       if(primeiro){erro.hidden=false;primeiro.focus();return;}
       erro.hidden=true;btn.disabled=true;btn.textContent='Abrindo o WhatsApp…';
       var endpoint=form.getAttribute('data-leads-endpoint'), fone=form.getAttribute('data-whatsapp');
       var perfilTxt=perfil.value==='Outro'?'Outro: '+val('perfil_outro'):perfil.value;
+      var origemTxt=origem.value==='Outro'?'Outro: '+val('origem_outro'):origem.value;
       var msg='Olá, Michele. Acabei de preencher o formulário do BRIDGE (24 e 25 nov 2026) e gostaria de reservar minha vaga na lista de seleção.\n\n'+
         'Nome: '+val('nome')+'\nEmpresa: '+val('empresa')+'\nCargo: '+val('cargo')+(val('setor')?'\nSetor: '+val('setor'):'')+
-        '\nE-mail: '+val('email')+'\nTelefone: '+val('telefone')+'\nPerfil: '+perfilTxt;
+        '\nE-mail: '+val('email')+'\nTelefone: '+val('telefone')+'\nPerfil: '+perfilTxt+'\nComo conheci o Instituto Ponte: '+origemTxt;
       var seguir=function(){window.location.href='https://wa.me/'+fone+'?text='+encodeURIComponent(msg);};
       if(!endpoint){seguir();return;}
       var dados=new URLSearchParams();
